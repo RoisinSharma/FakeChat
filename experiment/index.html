@@ -51,11 +51,12 @@
             questionnaire_loneliness,
             questionnaire_somatichealth,
             questionnaire_mentalhealth,
+            questionnaire_phq4,
         ])
         qs_aftertask = jsPsych.randomization.shuffleNoRepeats([
             questionnaire_mint,
             questionnaire_bait,
-            questionnaire_phq4,
+            questionnaire_iri,
         ])
 
         // Start -----------------------------------------------------------------
@@ -66,6 +67,7 @@
         timeline.push(qs_beforetask[0])
         timeline.push(qs_beforetask[1])
         timeline.push(qs_beforetask[2])
+        timeline.push(qs_beforetask[3])
 
         // Task
 

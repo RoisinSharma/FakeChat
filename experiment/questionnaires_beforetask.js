@@ -287,3 +287,94 @@ const questionnaire_somatichealth = {
         screen: "questionnaire_somatichealth",
     },
 }
+
+
+// PHQ-4 ================================================
+// + Single Item Life Satisfaction scale (SILS)
+
+const items_phq4 = {
+    PHQ4_Anxiety_1: "Feeling nervous, anxious or on edge",
+    PHQ4_Anxiety_2: "Not being able to stop or control worrying",
+    PHQ4_Depression_3: "Feeling down, depressed, or hopeless",
+    PHQ4_Depression_4: "Little interest or pleasure in doing things",
+}
+
+const instructions_phq4 = {
+    type: "html",
+    name: "instructions_phq4",
+    html: "<p>Over the <b>last 2 weeks</b>, how often have you been bothered by the following problems?</p>",
+}
+
+function make_phq4(items, required = true) {
+    items = shuffleObject(items)
+    questions = [instructions_phq4]
+
+    // Make questions
+    for (const key of Object.keys(items)) {
+        q = {
+            title: items[key],
+            name: key,
+            type: "rating",
+            displayMode: "buttons",
+            isRequired: required,
+            rateValues: [
+                {
+                    value: 0,
+                    text: "Not at all",
+                },
+                {
+                    value: 0.5,
+                    text: "Once or twice",
+                },
+                {
+                    value: 1,
+                    text: "Several days",
+                },
+                {
+                    value: 2,
+                    text: "More than half the days",
+                },
+                {
+                    value: 3,
+                    text: "Nearly every day",
+                },
+            ],
+        }
+        questions.push(q)
+    }
+
+    return { elements: questions }
+}
+
+const questionnaire_phq4 = {
+    type: jsPsychSurvey,
+    survey_json: function () {
+        return {
+            title: "About your mood",
+            showQuestionNumbers: false,
+            goNextPageAutomatic: true,
+            pages: [
+                {
+                    elements: [
+                        {
+                            title: "All things considered, how satisfied are you with your life as a whole?",
+                            name: "LifeSatisfaction",
+                            type: "rating",
+                            displayMode: "buttons",
+                            rateCount: 11,
+                            rateMin: 0,
+                            rateMax: 10,
+                            minRateDescription: "No satisfaction at all",
+                            maxRateDescription: "Completely satisfied",
+                            isRequired: true,
+                        },
+                    ],
+                },
+                make_phq4(items_phq4),
+            ],
+        }
+    },
+    data: {
+        screen: "questionnaire_phq4",
+    },
+}

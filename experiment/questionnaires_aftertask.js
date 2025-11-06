@@ -232,82 +232,9 @@ const questionnaire_bait = {
 }
 
 
-// PHQ-4 ================================================
-
-const items_phq4 = {
-    PHQ4_Anxiety_1: "Feeling nervous, anxious or on edge",
-    PHQ4_Anxiety_2: "Not being able to stop or control worrying",
-    PHQ4_Depression_3: "Feeling down, depressed, or hopeless",
-    PHQ4_Depression_4: "Little interest or pleasure in doing things",
-}
-
-const instructions_phq4 = {
-    type: "html",
-    name: "instructions_phq4",
-    html: "<p>Over the <b>last 2 weeks</b>, how often have you been bothered by the following problems?</p>",
-}
-
-function make_phq4(items, required = true) {
-    items = shuffleObject(items)
-    questions = []
-
-    // Make questions
-    for (const key of Object.keys(items)) {
-        q = {
-            title: items[key],
-            name: key,
-            type: "rating",
-            displayMode: "buttons",
-            isRequired: required,
-            rateValues: [
-                {
-                    value: 0,
-                    text: "Not at all",
-                },
-                {
-                    value: 0.5,
-                    text: "Once or twice",
-                },
-                {
-                    value: 1,
-                    text: "Several days",
-                },
-                {
-                    value: 2,
-                    text: "More than half the days",
-                },
-                {
-                    value: 3,
-                    text: "Nearly every day",
-                },
-            ],
-        }
-        questions.push(q)
-    }
-
-    return { elements: questions }
-}
-
-const questionnaire_phq4 = {
-    type: jsPsychSurvey,
-    survey_json: function () {
-        return {
-            title: "About your mood",
-            description:
-                "<p>Over the <b>last 2 weeks</b>, how often have you been bothered by the following problems?</p>",
-            showQuestionNumbers: false,
-            goNextPageAutomatic: true,
-            pages: make_phq4(items_phq4),
-        }
-    },
-    data: {
-        screen: "questionnaire_phq4",
-    },
-}
-
 // IRI ================================================
 
-const items_IRI = {
+const items_iri = {
     IRI_Cogntive_1: "I try to look at everybody's side of a disagreement before I make a decision.",
     IRI_Cogntive_2: "I sometimes try to understand my friends better by imagining how things look from their perspective.",
     IRI_Cogntive_3: "I believe that there are two sides to every question and try to look at them both.",
@@ -324,7 +251,7 @@ const items_IRI = {
     IRI_Affective_7: "When I see someone being treated unfairly, I sometimes don't feel very much pity for them.",
 }
 
-function make_IRI(items, required = true, ticks = ["Describes me well", "Does not describe me well"]) {
+function make_iri(items, required = true, ticks = ["Describes me well", "Does not describe me well"]) {
     items = shuffleObject(items)
 
     questions = []
@@ -348,7 +275,7 @@ function make_IRI(items, required = true, ticks = ["Describes me well", "Does no
     return { elements: questions }
 }
 
-const questionnaire_IRI = {
+const questionnaire_iri = {
     type: jsPsychSurvey,
     survey_json: function () {
         return {
@@ -357,11 +284,11 @@ const questionnaire_IRI = {
                 "We are interested in your thoughts and feelings. Please read the statements below carefully and indicate the extent each statement describe you.",
             showQuestionNumbers: false,
             goNextPageAutomatic: true,
-            pages: make_bait(items_bait),
+            pages: make_iri(items_iri),
         }
     },
     data: {
-        screen: "questionnaire_IRI",
+        screen: "questionnaire_iri",
     },
 }
 

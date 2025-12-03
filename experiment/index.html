@@ -20,6 +20,9 @@
         <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@2.1.0"></script>
         <script src="https://unpkg.com/@jspsych/plugin-fullscreen@2.1.0"></script>
         <script src="https://unpkg.com/@jspsych/plugin-survey@3.0.0"></script>
+        <script src="https://unpkg.com/@jspsych/plugin-image-button-response@2.1.0"></script>
+
+
         <link
             rel="stylesheet"
             href="https://unpkg.com/@jspsych/plugin-survey@3.0.0/css/survey.css"
@@ -54,8 +57,8 @@
         // Participant ID
         const participantID = jsPsych.randomization.randomID(10)
 
-        // // full screen
-        // timeline.push(ConsentForm)
+        // full screen
+        timeline.push(ConsentForm)
 
         // Shuffle -----------------------------------------------------------------
         qs_beforetask = jsPsych.randomization.shuffleNoRepeats([
@@ -65,6 +68,13 @@
             questionnaire_dejong,
             questionnaire_ucla,
         ])
+        
+        qs_task = jsPsych.randomization.shuffleNoRepeats([
+            loneliness_romantic,
+            loneliness_mental,
+            loneliness_general,
+        ])
+
         qs_aftertask = jsPsych.randomization.shuffleNoRepeats([
             questionnaire_mint,
             questionnaire_bait,
@@ -72,35 +82,41 @@
             questionnaire_seacs,
         ])
 
-        // // Start -----------------------------------------------------------------
-        // timeline.push(demographics_browser_info)
-        // timeline.push(demographic_questions)
+        // Start -----------------------------------------------------------------
+        timeline.push(demographics_browser_info)
+        timeline.push(demographic_questions)
 
-        // // Questionnaires - before task
-        // timeline.push(qs_beforetask[0])
-        // timeline.push(qs_beforetask[1])
-        // timeline.push(qs_beforetask[2])
-        // timeline.push(qs_beforetask[3])
-        // timeline.push(qs_beforetask[4])
+        // Questionnaires - before task
+        timeline.push(qs_beforetask[0])
+        timeline.push(qs_beforetask[1])
+        timeline.push(qs_beforetask[2])
+        timeline.push(qs_beforetask[3])
+        timeline.push(qs_beforetask[4])
 
-        // // Task
-        timeline.push(task_instructions1)
+        // Task
+        timeline.push(phase1_instructions)
         timeline.push(task_preloadstims)
-        timeline.push(social_phase1)
+        timeline.push(task_phase1)
 
-        // timeline.push(task_instructions2)
+        timeline.push(phase2_instructions)
+        timeline.push(task_phase2)
 
-        // // Questionnaires - after task
-        // timeline.push(questionnaire_instructions)
-        // timeline.push(qs_aftertask[0])
-        // timeline.push(qs_aftertask[1])
-        // timeline.push(qs_aftertask[2])
-        // timeline.push(qs_aftertask[3])
+        timeline.push(qs_task[0])
+        timeline.push(qs_task[1])
+        timeline.push(qs_task[2])
+        timeline.push(loneliness_people)
 
-        // // // End
-        // timeline.push(demographics_endscreen)
-        // timeline.push(experiment_feedback)
-        // timeline.push(demographics_debriefing)
+        // Questionnaires - after task
+        timeline.push(questionnaire_instructions)
+        timeline.push(qs_aftertask[0])
+        timeline.push(qs_aftertask[1])
+        timeline.push(qs_aftertask[2])
+        timeline.push(qs_aftertask[3])
+
+        // End
+        timeline.push(demographics_endscreen)
+        timeline.push(experiment_feedback)
+        timeline.push(demographics_debriefing)
 
         // // save data via DataPipe
         // // timeline.push({

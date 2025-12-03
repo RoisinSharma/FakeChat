@@ -13,7 +13,7 @@ const questionnaire_instructions = {
                             "<div style='display: flex;'>" +
                             "<div style='width: 60%; margin-right: 20px;'>" +
                             "<h2>Instructions</h2>" +
-                            "<p>In this study, you will be asked to complete various questionnaires. Please read each question carefully, and don't hesitate to take breaks in-between them.</p>" +
+                            "<p>You will now be asked to complete various questionnaires. Please read each question carefully, and don't hesitate to take breaks in-between them.</p>" +
                             "<p>Please note that <b style='color:#FF5722;'>various checks will be performed to ensure the validity of the data</b>.</li>" +
                             "<p> We are aware that answering these questionnaires <b>might feel long and repetitive</b>, but having similar questions is necessary to ensure the validity of the results (we expect similar questions to be related, and opposite questions to be inversely related). " +
                             "</div>" +

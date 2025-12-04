@@ -54,7 +54,7 @@ const items_mint = {
     MINT_Deficit_Sati_13:
         "I don't always feel the need to eat until I am really hungry",
     MINT_Deficit_Sati_14:
-        "Sometimes I don't realise I was hungry until I ate something",
+        "Sometimes I didn't realise I was hungry until I ate something",
     MINT_Deficit_Sati_15:
         "I don't always feel the need to drink until I am really thirsty",
     MINT_Awareness_SexS_19:

@@ -432,8 +432,8 @@ const phase2_instructions = {
                             <p><b>Thank you for staying with us so far!</b></p>
                             <p>There is <b>something important</b> we need to reveal... In the previous phase, you were shown conversations with partners who were presented as AI chatbots or real people.</p>
                             <p>We randomly changed the appearance of these conversations (e.g. from ChatGPT or iMessage), therefore some conversations may have been inaccurately presented.</p>
-                            <p>For example: an interaction from ChatGPT with an artificial agent may have actually been an interaction between two humans.</p>
-                            <p>In this final phase, we want you to try to identify <b>the correct category</b> of each image. We will briefly present all the conversations once more, followed by one question about whether you think the interaction partner was a human or an artificial agent.</p>
+                            <p>For example: an interaction from ChatGPT with an artificial chatbot may have actually been an interaction between two humans.</p>
+                            <p>In this final phase, we want you to try to identify <b>the correct category</b> of each image. We will briefly present all the conversations once more, followed by one question about whether you think the interaction partner was a human or an artificial chatbot.</p>
                             <p>Sometimes, it is hard to tell, but don't overthink it and <b>go with your gut feeling</b>. At the end, we will tell you if you were correct or wrong!</p>
                             </div>
                             `,
@@ -452,7 +452,7 @@ var phase2_vignette = {
     },
     choices: ['Continue'],
     prompt:
-        "<p>Based on this conversation, please rate how confident you are that the interaction partner was a human or an artificial agent.</p>",
+        "<p>Based on this conversation, please rate how confident you are that the interaction partner was a human or an artificial chatbot.</p>",
     trial_duration: null,
     data: function () {
         return {
@@ -551,7 +551,7 @@ const loneliness_general = {
                             isRequired: true,
                         },
                         {
-                            title: "... with an artificial agent",
+                            title: "... with an artificial chatbot",
                             name: "TrivialAI",
                             type: "rating",
                             displayMode: "buttons",
@@ -596,7 +596,7 @@ const loneliness_mental = {
                             isRequired: true,
                         },
                         {
-                            title: "... with an artificial agent",
+                            title: "... with an artificial chatbot",
                             name: "MentalAI",
                             type: "rating",
                             displayMode: "buttons",
@@ -641,7 +641,7 @@ const loneliness_romantic = {
                             isRequired: true,
                         },
                         {
-                            title: "... with an artificial agent",
+                            title: "... with an artificial chatbot",
                             name: "RomanticAI",
                             type: "rating",
                             displayMode: "buttons",

@@ -240,7 +240,7 @@ const items_iri = {
     IRI_Cogntive_3: "I believe that there are two sides to every question and try to look at them both.",
     IRI_Cognitive_4: "I sometimes find it difficult to see things from the 'other guy's' point of view.",
     IRI_Cognitive_5: "I try to look at things from the other person's point of view before making up my mind.",
-    IRI_Cognitive_6: "When I'm upset at someone, I usually try to 'put myself in his shoes' for a while.",
+    IRI_Cognitive_6: "When I'm upset at someone, I usually try to 'put myself in their shoes' for a while.",
     IRI_Cognitive_7: "Before criticising somebody, I try to imagine how I would feel if I were in their place.",
     IRI_Affective_1: "I often have tender, concerned feelings for people less fortunate than me.",
     IRI_Affective_2: "Sometimes I don't feel very sorry for other people when they are having problems.", 

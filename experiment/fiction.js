@@ -31,8 +31,10 @@ var vignettes = [
             "The following screenshots are taken from a conversation posted on Reddit following a thread discussing people's experiences with romantic apps. Users have provided their consent for their images to be used during this study, provided any identifiable information is made anonymous.",
         intro_text:
             "You recently joined an online platform designed to help people seeking romantic relationships.",
+        bubble_human: "(You are the bright pink speech bubble and your interaction partner is the dark purple speech bubble.)",
+        bubble_AI: "(You are the pink speech bubble and your interaction partner is the white speech bubble.)",
         images_AI: ["101.png"],
-        images_Human: ["102.png"],
+        images_human: ["102.png"],
     },
     {
         id: "romantic2",
@@ -41,8 +43,10 @@ var vignettes = [
             "The following screenshots are taken from a conversation posted on Reddit following a thread discussing people's experiences with romantic apps. Users have provided their consent for their images to be used during this study, provided any identifiable information is made anonymous.",
         intro_text: 
             "You recently joined an online platform seeking advice for romantic relationships.",
+        bubble_human: "(You are the teal blue speech bubble and your interaction partner is the navy speech bubble.)",
+        bubble_AI: "(You are the dark grey speech bubble and your interaction partner is the black speech bubble.)",
         images_AI: ["201.png"],
-        images_Human: ["202.png"],
+        images_human: ["202.png"],
     },
     {
         id: "mental1",
@@ -51,8 +55,10 @@ var vignettes = [
             "The following screenshots are taken from a conversation posted on Reddit following a thread discussing people's experiences with mental health support assistants. Users have provided their consent for their images to be used during this study, provided any identifiable information is made anonymous.",
         intro_text: 
             "You recently reached out to an online charity for support with your mental wellbeing.",
+        bubble_human: "(You are the green speech bubble and your interaction partner is the white speech bubble.)",
+        bubble_AI: "(You are the grey speech bubble and your interaction partner is the white speech bubble.)",
         images_AI: ["301.png"],
-        images_Human: ["302.png"],
+        images_human: ["302.png"],
     },
     {
         id: "mental2",
@@ -61,8 +67,10 @@ var vignettes = [
             "The following screenshots are taken from a conversation posted on Reddit following a thread discussing people's experiences with mental health support assistants. Users have provided their consent for their images to be used during this study, provided any identifiable information is made anonymous.",
         intro_text: 
             "You recently engaged with an online platform designed to help support those struggling with their mental wellbeing.",
+        bubble_human: "(You are the blue speech bubble and your interaction partner is the grey speech bubble.)",
+        bubble_AI: "(You are the dark grey speech bubble and your interaction partner is the white speech bubble.)",
         images_AI: ["401.png"],
-        images_Human: ["402.png"],
+        images_human: ["402.png"],
     },
     {
         id: "trivial1",
@@ -71,8 +79,10 @@ var vignettes = [
             "The following screenshots are taken from a conversation posted on Reddit following a thread discussing people's experiences with travel planning assistants. Users have provided their consent for their images to be used during this study, provided any identifiable information is made anonymous.",
         intro_text: 
              "You are planning a holiday using an online-accessible travel assistant.",
+        bubble_human: "(You are the orange speech bubble and your interaction partner is the white speech bubble.)",
+        bubble_AI: "(You are the dark grey speech bubble and your interaction partner is the black speech bubble.)",
         images_AI: ["501.png"],
-        images_Human: ["502.png"],
+        images_human: ["502.png"],
     },
     {
         id: "trivial2",
@@ -81,8 +91,10 @@ var vignettes = [
             "The following screenshots are taken from a conversation posted on Reddit following a thread designed to help connect people to make new friends. It is designed for people to talk about their day-to-day experiences. Users have provided their consent for their images to be used during this study, provided any identifiable information is anonymised.",
         intro_text: 
              "You recently joined a cooking class and are trying to figure out what you should have for dinner.",
+        bubble_human: "(You are the red speech bubble and your interaction partner is the white speech bubble.)",
+        bubble_AI: "(You are the dark grey speech bubble and your interaction partner is the black speech bubble.)",
         images_AI: ["601.png"],
-        images_Human: ["602.png"],
+        images_human: ["602.png"],
     },
 ]
 
@@ -133,7 +145,7 @@ function generateRandomNumbers(min, max, N) {
 var vignettes_trialnumber = 1
 stimuli = assignCondition(vignettes)
 for (let v of stimuli) {
-    v.Stimulus = v.Condition === "AI" ? v.images_AI[0] : v.images_Human[0]
+    v.Stimulus = v.Condition === "AI" ? v.images_AI[0] : v.images_human[0]
 }
 
 // We make 2 catch trials (always starting from 2 = the first trial) - attention checks
@@ -142,7 +154,7 @@ var task_preloadstims = {
     type: jsPsychPreload,
     images: vignettes.flatMap((v) => [
         ...v.images_AI.map((f) => "stimuli/" + f),
-        ...v.images_Human.map((f) => "stimuli/" + f),
+        ...v.images_human.map((f) => "stimuli/" + f),
     ]),
     message: "Loading stimuli...",
 }
@@ -164,17 +176,43 @@ const phase1_instructions = {
                         type: "html",
                         name: "Instructions1",
                         html: `
-                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px;">
+                            
+                                <div style="flex: 2;">
                                     <h1 style="margin: 0;">Instructions</h1>
+                                    <h2>Welcome</h2>
+
+                                    <p>
+                                        The following study is interested in looking at social interactions.
+                                    </p>
+
+                                    <p>
+                                        Several screenshots of conversations have been taken from Reddit, 
+                                        with the consent of users for their images to be used during this study, 
+                                        provided any identifiable information is anonymised.
+                                    </p>
+
+                                    <p>
+                                        <b>Please imagine that you are participating in the interaction while reading the dialogue.</b>
+                                    </p>
+
+                                    <p>
+                                        After each interaction, you will be asked a few questions about your experience.
+                                    </p>
+
+                                    <p style="color: red; font-weight: bold;">
+                                        If at any point you are uncomfortable, you can withdraw from the study by closing the tab.
+                                    </p>
                                 </div>
-                                <h2>Welcome</h2>
-                                <p>The following study is interested in looking at social interactions.</p>
-                                <p>Several screenshots of conversations have been taken from Reddit, with the consent of users for their images to be used during this study, provided any identifiable information is anonymised.</p>
-                                <p>Please imagine that you are participating in the interaction while reading the dialogue.</p>
-                                <p>After each interaction, you will be asked a few questions about your experience.</p>
-                                <p><b>If at any point you are uncomfortable, you can withdraw from the study by closing the tab.</b></p>
+
+                                <div style="flex: 1; text-align: center;">
+                                    <img src="stimuli/social_interaction.png" 
+                                         alt="Social Interaction" 
+                                         style="max-width: 100%; height: auto; border-radius: 10px;">
                                 </div>
-                                `,
+
+                            </div>
+                        `,
                     },
                 ],
             },
@@ -195,30 +233,57 @@ attention_indices.forEach((i) => {
 
 // Show vignette
 var phase1_vignette = {
-    type: jsPsychImageButtonResponse,
-    // vignette_description: function () {
-    //     var context_text = jsPsych.evaluateTimelineVariable("context_text")
-    //     var intro_text = jsPsych.evaluateTimelineVariable("intro_text")
-    //     return {
-    //         "<p>" +
-    //         context_text +
-    //         "</p>" +
-    //         "<p>" +
-    //         intro_text +
-    //         "</p>" +
-    //         "<p><b>Imagine this is your conversation.</b></p>" +
-    //         "<p>If at any point you are uncomfortable with the content of the conversation, you can withdraw from the study by closing the tab</p>" +
-    //         "</div>",
-    //     },
-    // }, 
+    type: jsPsychHtmlButtonResponse,
     stimulus: function () {
-        return "stimuli/" + jsPsych.evaluateTimelineVariable("Stimulus")
+        let context_text = jsPsych.evaluateTimelineVariable("context_text")
+        let intro_text = jsPsych.evaluateTimelineVariable("intro_text")
+        let bubble_human = jsPsych.evaluateTimelineVariable("bubble_human")
+        let bubble_AI = jsPsych.evaluateTimelineVariable("bubble_AI")
+        let condition = jsPsych.evaluateTimelineVariable("Condition")
+        let img_file = jsPsych.evaluateTimelineVariable("Stimulus")
+
+        let intro_img = img_file.replace(".png", "_intro.png")
+
+        let bubble_text = condition === "Human"
+            ? bubble_human
+            : bubble_AI
+
+        return `
+            <div style="max-width: 900px; margin: 0 auto; text-align: left;">
+
+                <p>${context_text}</p>
+
+                <p>
+                    <b>Imagine that this is your conversation.</b>
+                    ${intro_text}
+                    ${bubble_text}
+                </p>
+
+                <p style="color: red; font-weight: bold;">
+                    If at any point you are uncomfortable with the content of the conversation, 
+                    you can withdraw from the study by closing the tab.
+                </p>
+
+                <!-- INTRO IMAGE -->
+                <div style="margin-top: 20px; text-align: center;">
+                    <img src="stimuli/${intro_img}" 
+                         style="width:900px; max-width:100%; height:auto; margin-bottom: 20px;">
+                </div>
+
+                <!-- MAIN CONVERSATION IMAGE -->
+                <div style="text-align: center;">
+                    <img src="stimuli/${img_file}" 
+                         style="width:550px; max-width:100%; height:auto;">
+                </div>
+
+            </div>
+        `
     },
+    choices: ['Continue'],
     prompt:
         "<p>You have reached the end of the conversation.</p>" +
         "<p>You will now be asked a sequence of questions regarding your interaction.</p>" +
         "<p>Remember to imagine this is you engaging in the conversation.</p>",
-    choices: ['Continue'],
     trial_duration: null,
     data: function () {
         return {
@@ -450,6 +515,7 @@ var phase2_vignette = {
     stimulus: function () {
         return "stimuli/" + jsPsych.evaluateTimelineVariable("Stimulus")
     },
+     stimulus_width: 550,
     choices: ['Continue'],
     prompt:
         "<p>Based on this conversation, please rate how confident you are that the interaction partner was a human or an artificial chatbot.</p>",

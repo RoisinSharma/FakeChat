@@ -351,3 +351,70 @@ const questionnaire_seacs = {
     },
 }
 
+// Relationship Quality Scale (FQS/RQS) ================================================
+
+const items_rqs = {
+    RQS_1: "My friend/partner and I spend all our free time together",
+    RQS_2: "If I have a problem at school, work or home, I can talk to my friend/ partner about it",
+    RQS_3: "If other people were bothering me, my friend/partner would help me",
+    RQS_4: "My friend/partner thinks of fun things for us to do together",
+    RQS_5: "My friend/partner helps me when I am having trouble with something",
+    RQS_6: "If my friend/partner had to move away, I would miss them",
+    RQS_7: "When I do a good job at something, my friend/partner is happy for me",
+    RQS_8: "Sometimes my friend/partner does things for me, or makes me feel special",
+    RQS_9: "Sometimes I quarrel, even violently, with my friend/partner",
+    RQS_10: "My friend/partner would stick up for me if someone was causing me trouble",
+    RQS_11: "My friend/partner can bug me or annoy me even though I ask them not to",
+    RQS_12: "If I needed money my friend/partner would loan it to me",
+    RQS_13: "After having fought, even violently, with my friend/partner, if I said sorry to them, I think that they would continue to be angry with me",
+    RQS_14: "Sometimes my friend/partner and I just sit around and talk about things like study, work, and things we like",
+    RQS_15: "My friend/partner would help me if I needed it",
+    RQS_16: "If there is something bothering me, I can tell my friend/partner about it even if it is something I cannot tell to other people",
+    RQS_17: "If my friend/partner or I do something that bothers the other one of us, we can make up easily",
+    RQS_18: "My friend/partner and I can argue a lot",
+    RQS_19: "My friend/partner and I disagree about many things",
+    RQS_20: "If my friend/partner and I have a violent argument, we can say “I'm sorry” and everything will be alright",
+    RQS_21: "I feel happy when I am with my friend/partner",
+    RQS_22: "I think about my friend/partner even when they are not around",
+}
+
+function make_rqs(items, required = true, ticks = ["Not at all true", "Absolutely true"]) {
+    items = shuffleObject(items)
+
+    questions = []
+
+    // Make questions
+    for (const key of Object.keys(items)) {
+        q = {
+            title: items[key],
+            name: key,
+            type: "rating",
+            displayMode: "buttons",
+            // scaleColorMode: "colored",
+            isRequired: required,
+            minRateDescription: ticks[0],
+            maxRateDescription: ticks[1],
+            rateValues: [1, 2, 3, 4, 5],
+        }
+        questions.push(q)
+    }
+
+    return { elements: questions }
+}
+
+const questionnaire_rqs = {
+    type: jsPsychSurvey,
+    survey_json: function () {
+        return {
+            title: "About your relationships",
+            description:
+                "Please read the statements below carefully and indicate the extent to which you agree with each statement.",
+            showQuestionNumbers: false,
+            goNextPageAutomatic: false,
+            pages: make_rqs(items_rqs),
+        }
+    },
+    data: {
+        screen: "questionnaire_rqs",
+    },
+}

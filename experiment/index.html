@@ -117,18 +117,19 @@
 
 
         // End
-        timeline.push(demographics_debriefing)
-        timeline.push(demographics_endscreen)
         timeline.push(experiment_feedback)
+        timeline.push(demographics_debriefing)
 
-        // // save data via DataPipe
-        // // timeline.push({
-        // //     type: jsPsychPipe,
-        // //     action: "save",
-        // //     experiment_id: "IVMu1TevBRi6", // This in generated in the DataPipe interface
-        // //     filename: `${participantID}.csv`,
-        // //     data_string: () => jsPsych.data.get().csv(),
-        // // })
+        // save data via DataPipe
+        // timeline.push({
+        //     type: jsPsychPipe,
+        //     action: "save",
+        //     experiment_id: "IVMu1TevBRi6", // This in generated in the DataPipe interface
+        //     filename: `${participantID}.csv`,
+        //     data_string: () => jsPsych.data.get().csv(),
+        // })
+
+        timeline.push(demographics_endscreen)
 
         // /* ----------------- Run the timeline ----------------- */
         jsPsych.run(timeline)

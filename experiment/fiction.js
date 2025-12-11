@@ -490,18 +490,26 @@ const phase2_instructions = {
                         type: "html",
                         name: "Instructions2",
                         html: `
-                            <h1>Real... or not?</h1>
-                            <div style="display: flex; gap: 20px; align-items: flex-start;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px;">
+                            
+                                <div style="flex: 2;">
+                                    <h1 style="margin: 0;">Real... or not?</h1>
+                                    <h4>Thank you for staying with us so far!</h4>
+                                    <p>There is <b>something important</b> we need to reveal... In the previous phase, you were shown conversations with interaction partners who were presented as AI chatbots or real people.</p>
+                                    <p>We <b>randomly assigned the appearance of these conversations</b> to look like AI-human interactions or human-human interactions. Therefore, some conversations may not have been presented in their correct form.</p>
+                                    <p>For example: an interaction presented to you in the form of a conversation with an artificial agent (e.g. ChatGPT) may have actually been an interaction between two humans.</p>
+                                    <p>In this final phase, we want you to try to identify <b>the correct category</b> of each image. We will briefly present all the conversations once more, followed by one question about whether you think the interaction partner was a human or an artificial agent.</p>
+                                    <p>Sometimes, it is hard to tell, but don't overthink it and <b>go with your gut feeling</b>. At the end, we will tell you if you were correct or wrong!</p>
+                                </div>
+
+                                <div style="flex: 1; text-align: center;">
+                                    <img src="stimuli/example_vignette.png" 
+                                        alt="Example" 
+                                        style="max-width: 100%; height: auto; border-radius: 10px;">
+                                </div>
+
                             </div>
-                            <div style="flex: 2; text-align: left;">
-                            <p><b>Thank you for staying with us so far!</b></p>
-                            <p>There is <b>something important</b> we need to reveal... In the previous phase, you were shown conversations with interaction partners who were presented as AI chatbots or real people.</p>
-                            <p>We randomly assigned the appearance of these conversations to look like AI-human interactions or human-human interactions. Therefore, some conversations may not have been presented in their correct form.</p>
-                            <p>For example: an interaction presented to you in the form of a conversation with an artificial agent (e.g. ChatGPT) may have actually been an interaction between two humans.</p>
-                            <p>In this final phase, we want you to try to identify <b>the correct category</b> of each image. We will briefly present all the conversations once more, followed by one question about whether you think the interaction partner was a human or an artificial agent.</p>
-                            <p>Sometimes, it is hard to tell, but don't overthink it and <b>go with your gut feeling</b>. At the end, we will tell you if you were correct or wrong!</p>
-                            </div>
-                            `,
+                        `,
                     },
                 ],
             },
@@ -597,7 +605,7 @@ const loneliness_general = {
     type: jsPsychSurvey,
     survey_json: function () {
         return {
-            title: "Think back to a time when you felt the most alone generally.",
+            title: "Think back to a time where you needed help with a day to day task.",
             showQuestionNumbers: false,
             goNextPageAutomatic: false,
             pages: [

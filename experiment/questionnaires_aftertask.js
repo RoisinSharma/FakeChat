@@ -192,6 +192,26 @@ const items_bait = {
 
 function make_bait(items, required = true, ticks = ["Disagree", "Agree"]) {
     items = shuffleObject(items)
+    var ai_expertise = [
+        {
+            title: "How knowledgeable do you consider yourself about Artificial Intelligence (AI) technology?",
+            name: "BAIT_AI_Knowledge",
+            type: "rating",
+            displayMode: "buttons",
+            isRequired: required,
+            minRateDescription: "Not at all",
+            maxRateDescription: "Expert",
+            rateValues: [0, 1, 2, 3, 4, 5, 6],
+        },
+        {
+            title: "How frequently do you use Artificial Intelligence (AI) tools or technologies in your daily life? ",
+            description: "This includes tools like ChatGPT, image or art generators, and AI assistants.",
+            name: "BAIT_AI_Use",
+            type: "radiogroup",
+            isRequired: required,
+            choices: ["Never", "A few times per month", "A few times per week", "Once a day", "A few times per day"],
+        },
+    ]
 
     questions = []
 
@@ -210,8 +230,14 @@ function make_bait(items, required = true, ticks = ["Disagree", "Agree"]) {
         }
         questions.push(q)
     }
-
-    return { elements: questions }
+    return [
+        { elements: ai_expertise },
+        {
+            elements: questions,
+            description:
+                "We are interested in your thoughts about Artificial Intelligence (AI). Please read the statements below carefully and indicate the extent to which you agree with each statement.",
+        },
+    ]
 }
 
 const questionnaire_bait = {
@@ -219,8 +245,6 @@ const questionnaire_bait = {
     survey_json: function () {
         return {
             title: "About Artificial Intelligence (AI)",
-            description:
-                "We are interested in your thoughts about Artificial Intelligence (AI). Please read the statements below carefully and indicate the extent to which you agree with each statement.",
             showQuestionNumbers: false,
             goNextPageAutomatic: false,
             pages: make_bait(items_bait),

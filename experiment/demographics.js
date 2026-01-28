@@ -15,14 +15,22 @@ const ConsentForm = {
         text +=
             // Overview
             "<p align='left'><b>Invitation to Take Part</b><br>" +
-            "Thank you for considering to take part in this study conducted by Dr Dominique Makowski from the University of Sussex and his team (see contact information below).</p>" +
+            "You are being invited to take part in a research study to further our understanding of perceptions of social interactions. " +
+            "Thank you for carefully reading this information sheet. " +
+            "This study is being conducted by student researchers Riehana Aziz, Emma Benn, Maisie Bennett, Summer-Lili Cloke and Poppy Duval-Johnston, and project supervisor Dr Dominique Makowski from the School of Psychology, University of Sussex (see contact information below).</p>" +
             // Description
             "<p align='left'><b>Why have I been invited and what will I do?</b><br>" +
             "This study aims to investigate perceptions of social interactions and how these may differ between conversation topic themes. " +
-            "The whole experiment will take you <b style='color:#FF5722;'>~20 minutes</b> to complete. Please make you sure that you are <b>attentive and in a quiet environment</b>, and that you have time to complete it in one go.</p>" +
+            "To begin, you will have to answer a series of questionnaires about you and your feelings. You will then be shown several screenshots of conversations taken from Reddit, with the consent of users for their images to be used during the study. " +
+            "Please imagine that you are participating in the interaction while reading the dialogue. After each conversation you will be asked a couple of questions about your experience. " +
+            "To finish, you will have to answer a few questions about you and your social interactions. " +
+            "The whole experiment will take you <b style='color:#FF5722;'>~25 minutes</b> to complete. Please make you sure that you are <b>attentive and in a quiet environment</b>, and that you have time to complete it in one go.</p> " +
+            // Risks
+            "<p align='left'><b>Are there any risks or benefits to taking part?</b><br>" +
+            "<p style='color:#FF5722;'>Content warning: The conversations you will read contain content that some people may find distressing, including themes of alcohol use, self-harm, suicidal thoughts and mental health struggles. You can withdraw from the study at any time by closing the tab.</p> " +
             // Results and personal information
             "<p align='left'><b>What will happen to the results and my personal information?</b><br>" +
-            "The results of this research may be written into a scientific publication. Your anonymity will be ensured in the way described in the consent information below. <b>Please read this information carefully</b> and then, if you wish to take part, please acknowledge that you have fully understood this sheet, and that you consent to take part in the study as it is described here.</p>" +
+            "The results of this research may be written into a scientific report for a Psychology dissertation and/or publication. We anticipate being able to provide a summary of our findings on request from 30/05/26 (<i style='color:DodgerBlue;'>D.Makowski@sussex.ac.uk</i>). Your anonymity will be ensured in the way described in the consent information below. <b>Please read this information carefully</b> and then, if you wish to take part, please acknowledge that you have fully understood this sheet, and that you consent to take part in the study as it is described here.</p>" +
             "<p align='left'><b>Consent</b><br></p>" +
             // Bullet points
             "<li align='left'>I understand that by signing below I am agreeing to take part in the University of Sussex research described here, and that I have read and understood this information sheet</li>" +

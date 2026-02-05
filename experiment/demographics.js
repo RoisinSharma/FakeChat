@@ -350,12 +350,12 @@ var demographics_debriefing = {
                             "<li>Borderline Personality Disorder (BPD): <a href='https://www.nhs.uk/mental-health/conditions/borderline-personality-disorder/' target='_blank'>NHS Info</a></li>" +
                             "<li>Major Depressive Disorder (MDD): <a href='https://www.mind.org.uk/information-support/types-of-mental-health-problems/depression/' target='_blank'>Mind: Depression</a></li>" +
                             "<li>Obsessive-Compulsive Disorder (OCD): <a href='https://www.ocduk.org/' target='_blank'>OCD-UK</a></li>" +
-                            "<li>Panic Disorder: <a href='https://www.mind.org.uk/information-support/types-of-mental-health-problems/anxiety/' target='_blank'>Mind: Anxiety & Panic</a></li>" +
-                            "<li>Post-Traumatic Stress Disorder (PTSD): <a href='https://www.mentalhealth.org.uk/conditions/ptsd' target='_blank'>Mental Health Foundation</a></li>" +
+                            "<li>Panic Disorder: <a href='https://www.mind.org.uk/information-support/types-of-mental-health-problems/anxiety-and-panic-attacks' target='_blank'>Mind: Anxiety & Panic</a></li>" +
+                            "<li>Post-Traumatic Stress Disorder (PTSD): <a href='https://www.mentalhealth.org.uk/explore-mental-health/a-z-topics/post-traumatic-stress-disorder-ptsd' target='_blank'>Mental Health Foundation</a></li>" +
                             "<li>Schizophrenia: <a href='https://www.nhs.uk/mental-health/conditions/schizophrenia/' target='_blank'>NHS Info</a></li>" +
-                            "<li>Social Anxiety Disorder (Social Phobia): <a href='https://www.mind.org.uk/information-support/types-of-mental-health-problems/social-anxiety/' target='_blank'>Mind: Social Anxiety</a></li>" +
+                            "<li>Social Anxiety Disorder (Social Phobia): <a href='https://www.mind.org.uk/information-support/types-of-mental-health-problems/phobias/types-of-phobia/#WhatIsSocialPhobia' target='_blank'>Mind: Social Anxiety</a></li>" +
                             "<li>Specific Phobias: <a href='https://www.nhs.uk/mental-health/conditions/phobias/' target='_blank'>NHS Info</a></li>" +
-                            "<li>Eating Disorders (e.g., Anorexia, Bulimia, Binge Eating): <a href='https://www.nhs.uk/mental-health/conditions/eating-disorders/' target='_blank'>NHS Info</a> | <a href='https://www.beateatingdisorders.org.uk/' target='_blank'>Beat Eating Disorders</a></li>" +
+                            "<li>Eating Disorders (e.g., Anorexia, Bulimia, Binge Eating): <a href='https://www.nhs.uk/mental-health/feelings-symptoms-behaviours/behaviours/eating-disorders/overview/' target='_blank'>NHS Info</a> | <a href='https://www.beateatingdisorders.org.uk/' target='_blank'>Beat Eating Disorders</a></li>" +
                             "</ul>" +
                             //Physical ans somatic Health
                             "<p align='left'><b>Support Resources for Physical and Somatic Health Conditions</b></p>" +
@@ -369,8 +369,8 @@ var demographics_debriefing = {
                             "</li>" +
                             "<li><b>Dermatological and Skin Conditions:</b><br>" +
                             "Skin rashes, Eczema, Psoriasis, Sjogren's Syndrome<br>" +
-                            "<a href='https://www.nhs.uk/conditions/skin-conditions/' target='_blank'>NHS: Skin Conditions</a><br>" +
-                            "<a href='https://www.psoriasis.org.uk/' target='_blank'>Psoriasis Association</a> – Information and support" +
+                            "<a href='https://www.nhsinform.scot/illnesses-and-conditions/skin-hair-and-nails/' target='_blank'>NHS: Skin Conditions</a><br>" +
+                            "<a href='https://www.psoriasis.org/' target='_blank'>Psoriasis Association</a> – Information and support" +
                             "</li>" +
                             "<li><b>Cardiovascular Conditions:</b><br>" +
                             "Chest Pain, Cardiac Arrhythmia, Hypertension, Hypotension<br>" +
@@ -395,7 +395,7 @@ var demographics_debriefing = {
                             "<li><b>Genitourinary Conditions:</b><br>" +
                             "Frequent Urination, Endometriosis, Interstitial Cystitis, Chronic Pelvic Pain Syndrome<br>" +
                             "<a href='https://www.endometriosis-uk.org/' target='_blank'>Endometriosis UK</a> – Information and support<br>" +
-                            "<a href='https://www.ic-network.org/' target='_blank'>Interstitial Cystitis Support Network UK</a> – Guidance and resources" +
+                            "<a href='https://www.ichelp.org/' target='_blank'>Interstitial Cystitis Support Network UK</a> – Guidance and resources" +
                             "</li>" +
                             "</ul>" +
                             "<p>We encourage you to <b>reach out to any of the above services</b> if you feel <b>you need support or advice.</b> Your wellbeing is important, and there are resources available to help at any time.</p>",

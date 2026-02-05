@@ -285,7 +285,9 @@ var phase1_vignette = {
             </div>
         `
     },
-    choices: ['<button style="background-color:#FFFFFF; color:#474747; padding:12px 24px; border:2px solid #D9D9D9; border-radius:8px; font-size:18px; cursor:pointer;">Continue</button>'],
+    choices: function(choice){
+        return [`<button style="background-color:#FFFFFF; color:#474747; padding:12px 24px; border:2px solid #D9D9D9; border-radius:8px; font-size:18px; cursor:pointer;">Continue</button>`]
+    },
     trial_duration: null,
     data: function () {
         return {

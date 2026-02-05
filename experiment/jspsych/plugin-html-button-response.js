@@ -24,7 +24,7 @@ var jsPsychHtmlButtonResponse = (function (jspsych) {
       button_html: {
         type: jspsych.ParameterType.FUNCTION,
         default: function(choice, choice_index) {
-          return `<button style="background-color:#FFFFFF; color:#474747; padding:12px 24px; border:2px solid #D9D9D9; border-radius:8px; font-size:18px">${choice}</button>`;
+          return `<button style="background-color:#FFFFFF; color:#474747; padding:12px 24px; border:2px solid #D9D9D9; border-radius:8px; cursor:pointer; font-size:18px">${choice}</button>`;
           //<button class="jspsych-btn">${choice}</button>`;
         }
       },

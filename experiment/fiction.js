@@ -285,10 +285,8 @@ var phase1_vignette = {
             </div>
         `
     },
-    choices: ['Continue'],
-    button_html: '<button style="background-color:#FFFFFF; color:#474747; padding:12px 24px; border:2px solid #D9D9D9; border-radius:8px; font-size:18px; cursor:pointer; margin-top: 50px;">Continue</button>',
+    choices: ['<button style="background-color:#FFFFFF; color:#474747; padding:12px 24px; border:2px solid #D9D9D9; border-radius:8px; font-size:18px; cursor:pointer;">Continue</button>'],
     trial_duration: null,
-    
     data: function () {
         return {
             screen: "vignette_image1",
